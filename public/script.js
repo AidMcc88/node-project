@@ -36,19 +36,18 @@ const showKarts = async () => {
 
         let img = document.createElement("img");
         section.append(img);
-        img.src = "http://localhost:3003/" + kart.img;
+        img.src = "https://two42-assignment13.onrender.com/" + kart.img;
     });
 };
 
-const getJSON = async () => {
+const getJSON = async() => {
     try {
-        let response = await fetch("http://localhost:3003/api/karts");
-        return await response.json();
+        return (await fetch("https://two42-assignment13.onrender.com/api/karts")).json();
     } catch(error) {
         console.log("error retrieving json");
         return "";
     }
-};
+}
 
 window.onload = () => {
     showKarts();
