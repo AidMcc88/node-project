@@ -42,8 +42,7 @@ const showKarts = async () => {
 
 const getJSON = async () => {
     try {
-        let response = await fetch("https://two42-assignment13.onrender.com/");
-        return await response.json();
+        return (await fetch("https://two42-assignment13.onrender.com/")).json();
     } catch(error) {
         console.log("error retrieving json");
         return "";
