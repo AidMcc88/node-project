@@ -36,13 +36,14 @@ const showKarts = async () => {
 
         let img = document.createElement("img");
         section.append(img);
-        img.src = "https://two42-assignment13.onrender.com/" + kart.img;
+        img.src = "http://localhost:3000/" + kart.img;
     });
 };
 
 const getJSON = async () => {
     try {
-        return (await fetch("https://two42-assignment13.onrender.com/")).json();
+        let response = await fetch("http://localhost:3000/api/karts");
+        return await response.json();
     } catch(error) {
         console.log("error retrieving json");
         return "";
